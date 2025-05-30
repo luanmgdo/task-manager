@@ -134,3 +134,12 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Keep environment variables out of version control
+.env
+
+/generated/prisma
+
+/generated/prisma
+
+/generated/prisma

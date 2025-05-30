@@ -1,0 +1,62 @@
+### create user
+POST http://localhost:3000/cadastro
+Content-Type: application/json
+
+{
+    "name": "luan",
+    "email": "luan@gmail.com",
+    "password": "senha123"
+}
+
+### login
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email": "luan@gmail.com",
+    "password": "senha123"
+}
+
+### list all users
+get http://localhost:3000/lista-usuarios
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzYzNzJiMWFlMzJmNjIxYjk5MzU1ZiIsImlhdCI6MTc0ODM4OTY5NiwiZXhwIjoxNzQ4Mzg5NzU2fQ.9yZvbvqatjvQDJf1Sm93nUIWbUmV4nfRuTiM2TJso34
+
+### create task
+POST http://localhost:3000/tasks/add
+Content-Type: application/json
+
+{
+    "title": "Task 02",
+    "description": "Esta é minha segunda task",
+    "authorId": "6839f365b21741271952c088"
+}
+
+### tasks by userId
+GET http://localhost:3000/tasks/list?authorId=6839f365b21741271952c088
+
+### task by id
+GET http://localhost:3000/tasks/list?taskId=6839fc3ad6e174b6d43391e0
+
+### tasks completed
+GET http://localhost:3000/tasks/list?completed=true
+
+### tasks uncompleted
+GET http://localhost:3000/tasks/list?completed=false
+
+### combined filters
+GET http://localhost:3000/tasks/list?authorId=6839f365b21741271952c088&completed=true
+
+
+### edit task
+PUT http://localhost:3000/tasks/edit/6839fc3ad6e174b6d43391e0
+Content-Type: application/json
+
+{
+    "title": "Task 02",
+    "description": "Esta é minha segunda , atualizada",
+    "completed": true
+}
+
+### remove task
+DELETE http://localhost:3000/tasks/delete/6839f4d7360b0c966c56fa3a
+
